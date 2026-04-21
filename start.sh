@@ -5,7 +5,6 @@ python manage.py migrate
 echo "from django.contrib.auth import get_user_model;
 User = get_user_model();
 User.objects.filter(username='Yogesh').exists() or
-User.objects.create_superuser('Yogesh', 'admin@gmail.com', 'yogesh@123')" \
-| python manage.py shell
+User.objects.create_superuser('Yogesh', 'yogesh@gmail.com', 'yogesh@123')" | python manage.py shell
 
-gunicorn backend.wsgi:application
+gunicorn backend.wsgi:application --bind 0.0.0.0:$PORT
