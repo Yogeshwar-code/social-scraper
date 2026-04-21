@@ -4,7 +4,13 @@ import dj_database_url
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["yourdomain.com"]
+# ALLOWED_HOSTS = ["yourdomain.com"]   # before for local machine
+
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    os.environ.get("RENDER_EXTERNAL_HOSTNAME"),
+]
 
 """
 DATABASES = {
