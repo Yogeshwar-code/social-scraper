@@ -52,7 +52,8 @@ DEBUG = os.getenv("DEBUG") == "True"
 #  ALLOWED_HOSTS = []  #['yourdomain.com']
 
 #  ALLOWED_HOSTS should come from env
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
+#ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 # Application definition
 
